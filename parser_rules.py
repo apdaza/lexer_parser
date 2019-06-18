@@ -5,6 +5,10 @@ def p_expression_plus(subexpr):
     'expression : expression PLUS term'
     subexpr[0] = subexpr[1] + subexpr[3]
 
+def p_expression_minus(subexpr):
+    'expression : expression MINUS term'
+    subexpr[0] = subexpr[1] - subexpr[3]
+
 def p_expression_term(subexpr):
     'expression : term'
     subexpr[0] = subexpr[1]
@@ -12,6 +16,10 @@ def p_expression_term(subexpr):
 def p_term_times(subexpr):
     'term : term TIMES factor'
     subexpr[0] = subexpr[1] * subexpr[3]
+
+def p_term_divide(subexpr):
+    'term : term DIVIDE factor'
+    subexpr[0] = subexpr[1] / subexpr[3]
 
 def p_term_factor(subexpr):
     'term : factor'
