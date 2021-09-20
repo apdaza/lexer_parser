@@ -8,8 +8,6 @@ text = "(14 + 6) - 2"
 lexer = lex(module=lexer_rules)
 parser = yacc(module=parser_rules)
 expression = parser.parse(text, lexer)
-print expression
-"""
-result = expression.evaluate()
-print result
-"""
+print(expression)
+
+
